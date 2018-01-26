@@ -4,46 +4,40 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter
+@Setter
 public class Booking {
+	private boolean isAbleToRent;
+	private String[] plainDates;
 	private List<LocalDate> bookingDates;
 	private Car car;
 	private BigDecimal amount;
 	private int customerAge;
 	
+	private BigDecimal multipleDaydiscount;
+	private BigDecimal weekdaydiscount;
+	private BigDecimal membershipDiscount;
+	private BigDecimal insurance;
+	private BigDecimal total;
+	private BigDecimal totalDiscounts;
 	private boolean membership;
-	
-	
-	public boolean isMembership() {
-		return membership;
+
+
+		
+	@Override
+	public String toString() {
+		return "Booking [amount=" + amount + ", insurance=" + insurance
+				+ ", totalDiscounts=" + totalDiscounts + ", total=" + total
+				+ "]";
 	}
-	public void setMembership(boolean membership) {
-		this.membership = membership;
-	}
-	public List<LocalDate> getBookingDates() {
-		return bookingDates;
-	}
-	public void setBookingDates(List<LocalDate> bookingDates) {
-		this.bookingDates = bookingDates;
-	}
-	public Car getCar() {
-		return car;
-	}
-	public void setCar(Car car) {
-		this.car = car;
-	}
-	public BigDecimal getAmount() {
-		return amount;
-	}
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
-	public int getCustomerAge() {
-		return customerAge;
-	}
-	public void setCustomerAge(int customerAge) {
-		this.customerAge = customerAge;
-	}
-	
+
+
+
+
 	
 	
 }

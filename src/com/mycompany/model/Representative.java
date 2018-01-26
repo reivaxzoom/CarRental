@@ -1,5 +1,10 @@
 package com.mycompany.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Representative {
 
 	private BookingBuilder bookingBuilder;
@@ -7,19 +12,11 @@ public class Representative {
 	public void makeBooking(){
 		bookingBuilder.createNewBooking();
 		bookingBuilder.calculateBookingAmount();
-		bookingBuilder.applyInsurancePolice();
-		bookingBuilder.applyDiscount();
+		bookingBuilder.calculateMultipleDaysDiscount();
+		bookingBuilder.calculateMembershipDiscount();
+		bookingBuilder.calculateWeekdaysDiscount();
+		bookingBuilder.calculateInsurance();
 		bookingBuilder.calculateTotalPayment();
+		bookingBuilder.showBooking();
 	}
-
-	public BookingBuilder getBookingBuilder() {
-		return bookingBuilder;
-	}
-
-	public void setBookingBuilder(BookingBuilder bookingBuilder) {
-		this.bookingBuilder = bookingBuilder;
-	}
-	
-	
-	
 }

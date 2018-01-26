@@ -1,24 +1,13 @@
 package com.mycompany.builder;
 
-import java.time.LocalDate;
-import java.util.List;
-
 import com.mycompany.model.BookingBuilder;
 
 public class SportCarBookingBuilder extends BookingBuilder {
 
-	@Override
-	public void applyDiscount() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
+	
 	@Override
-	public void applyInsurancePolice() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public void calculateTotalPayment() {
 		// TODO Auto-generated method stub
 		
@@ -31,21 +20,27 @@ public class SportCarBookingBuilder extends BookingBuilder {
 	}
 
 	@Override
-	protected void rentSingleDay(LocalDate date) {
+	public void calculateWeekdaysDiscount() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	protected void weekendsrental(List<LocalDate> dates) {
+	public void calculateMultipleDaysDiscount() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	protected void multipleDayRental(List<LocalDate> dates) {
+	public void calculateMembershipDiscount() {
 		// TODO Auto-generated method stub
 		
 	}
 
-}
+	@Override
+	public void calculateInsurance() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	}
