@@ -24,6 +24,6 @@ input.json
 ```
 output
 ```JSON
-{"subtotal":"180.00","insuranceTotal":"26.25","discountPercentage":"21.00","totalPayment":"185.25"}
+{"subtotal":"300.00","insuranceTotal":"30.00","discountPercentage":"35.00","totalPayment":"295.00"}
 ```
 
