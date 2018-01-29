@@ -16,7 +16,7 @@ File input.json has the input data for carRentalDemostration
 
 ```
 C:\...\CarRental> mvn clean install
-C:\...\CarRental> java -jar target/carRental-1.0-jar-with-dependencies.jar test1.json
+C:\...\CarRental> java -jar target/carRental-1.0-jar-with-dependencies.jar input.json
 ```
 input.json
 ```JSON
