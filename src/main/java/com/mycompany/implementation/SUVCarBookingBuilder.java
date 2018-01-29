@@ -1,13 +1,13 @@
-package com.mycompany.builder;
+package com.mycompany.implementation;
 
 import java.math.BigDecimal;
 
-import com.mycompany.model.BookingBuilder;
+import com.mycompany.builder.BookingBuilder;
 
-public class SmallCarBookingBuilder extends BookingBuilder {
+public class SUVCarBookingBuilder extends BookingBuilder {
 
-	BigDecimal daylyRentalRate=BigDecimal.valueOf(40);
-	BigDecimal insuranceRate= BigDecimal.valueOf(5);
+	BigDecimal daylyRentalRate=BigDecimal.valueOf(100);
+	BigDecimal insuranceRate= BigDecimal.valueOf(10);
 	BigDecimal insuranceRateYoung= insuranceRate.add(BigDecimal.valueOf(0.25));
 			
 	@Override
@@ -18,7 +18,7 @@ public class SmallCarBookingBuilder extends BookingBuilder {
 		
 	@Override
 	public void calculateWeekdaysDiscount() {
-		booking.setWeekdaydiscount(calculateWeekdaysDiscount.apply(booking, daylyRentalRate));
+		booking.setWeekdaydiscount(calculateWeekdaysDiscount.apply(booking, weekdayDiscount ));
 	}
 
 	@Override
@@ -30,5 +30,7 @@ public class SmallCarBookingBuilder extends BookingBuilder {
 			BigDecimal insurance= calculateInsurance.apply(insuranceRateYoung, BigDecimal.valueOf(booking.getBookingDates().size()));
 			booking.setInsurance(insurance);
 		}
+		
 	}
+	
 }

@@ -1,8 +1,8 @@
-package com.mycompany.builder;
+package com.mycompany.implementation;
 
 import java.math.BigDecimal;
 
-import com.mycompany.model.BookingBuilder;
+import com.mycompany.builder.BookingBuilder;
 
 public class SportCarBookingBuilder extends BookingBuilder {
 

@@ -1,4 +1,4 @@
-package com.mycompany.tdd;
+package com.mycompany.BookingBuilder;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -11,7 +11,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.mycompany.model.CarRentalDemo;
+import com.mycompany.executor.CarRentalDemo;
 
 /**
  * Test class for format validation

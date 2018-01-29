@@ -1,5 +1,6 @@
-package com.mycompany.model;
+package com.mycompany.builder;
 
+import com.mycompany.builder.BookingBuilder;
 import lombok.Getter;
 import lombok.Setter;
 

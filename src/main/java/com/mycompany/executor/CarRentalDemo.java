@@ -1,15 +1,17 @@
-package com.mycompany.model;
+package com.mycompany.executor;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import com.mycompany.builder.SUVCarBookingBuilder;
-import com.mycompany.builder.SmallCarBookingBuilder;
-import com.mycompany.builder.SportCarBookingBuilder;
+import com.mycompany.builder.BookingBuilder;
+import com.mycompany.builder.Representative;
+import com.mycompany.implementation.SUVCarBookingBuilder;
+import com.mycompany.implementation.SmallCarBookingBuilder;
+import com.mycompany.implementation.SportCarBookingBuilder;
+import com.mycompany.model.BookingRequest;
 
 public class CarRentalDemo {
 	private static final Logger LOGGER = Logger.getLogger(CarRentalDemo.class

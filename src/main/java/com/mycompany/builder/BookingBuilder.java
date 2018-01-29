@@ -1,5 +1,7 @@
-package com.mycompany.model;
+package com.mycompany.builder;
 
+import com.mycompany.model.Booking;
+import com.mycompany.model.BookingRequest;
 import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.LocalDate;

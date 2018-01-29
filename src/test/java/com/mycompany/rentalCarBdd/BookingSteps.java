@@ -1,4 +1,4 @@
-package com.mycompany.bdd;
+package com.mycompany.rentalCarBdd;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -10,13 +10,13 @@ import java.util.function.Function;
 
 import org.hamcrest.core.IsNull;
 
-import com.mycompany.builder.SUVCarBookingBuilder;
-import com.mycompany.builder.SmallCarBookingBuilder;
-import com.mycompany.builder.SportCarBookingBuilder;
-import com.mycompany.model.BookingBuilder;
+import com.mycompany.implementation.SUVCarBookingBuilder;
+import com.mycompany.implementation.SmallCarBookingBuilder;
+import com.mycompany.implementation.SportCarBookingBuilder;
+import com.mycompany.builder.BookingBuilder;
 import com.mycompany.model.BookingRequest;
 import com.mycompany.model.Car;
-import com.mycompany.model.Representative;
+import com.mycompany.builder.Representative;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

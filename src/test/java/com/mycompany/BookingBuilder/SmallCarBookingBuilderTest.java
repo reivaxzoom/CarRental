@@ -1,4 +1,4 @@
-package com.mycompany.tdd;
+package com.mycompany.BookingBuilder;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -14,10 +14,16 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.google.gson.Gson;
-import com.mycompany.builder.SportCarBookingBuilder;
+import com.google.gson.stream.JsonReader;
+import com.mycompany.implementation.SportCarBookingBuilder;
 import com.mycompany.model.Booking;
-import com.mycompany.model.BookingBuilder;
+import com.mycompany.builder.BookingBuilder;
+import com.mycompany.builder.Representative;
 import com.mycompany.model.BookingRequest;
+import java.io.FileReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class SmallCarBookingBuilderTest {
 
@@ -28,9 +34,19 @@ public class SmallCarBookingBuilderTest {
     
 	@Before
 	public void setUp() throws Exception {
-		String input="{\"rentDates\":[\"2017-11-19T05:00:00.000Z\",\"2017-11-20T05:00:00.000Z\",\"2017-11-21T05:00:00.000Z\"],\"car\":{\"model\":\"cherato\",\"type\":\"sport\"},\"membership\":false,\"age\":24}"  ;
-		String input2="{\"rentDates\":[\"2017-11-18T05:00:00.000Z\",\"2017-11-19T05:00:00.000Z\",\"2017-11-20T05:00:00.000Z\",\"2017-11-21T05:00:00.000Z\",\"2017-11-22T05:00:00.000Z\",\"2017-11-25T05:00:00.000Z\"],\"car\":{\"model\":\"vitoro\",\"type\":\"SUV\"},\"membership\":false,\"age\":28}"  ;
-		BookingRequest request =new Gson().fromJson(input2, BookingRequest.class);
+//		String input="{\"rentDates\":[\"2017-11-19T05:00:00.000Z\",\"2017-11-20T05:00:00.000Z\",\"2017-11-21T05:00:00.000Z\"],\"car\":{\"model\":\"cherato\",\"type\":\"sport\"},\"membership\":false,\"age\":24}"  ;
+//		String input2="{\"rentDates\":[\"2017-11-18T05:00:00.000Z\",\"2017-11-19T05:00:00.000Z\",\"2017-11-20T05:00:00.000Z\",\"2017-11-21T05:00:00.000Z\",\"2017-11-22T05:00:00.000Z\",\"2017-11-25T05:00:00.000Z\"],\"car\":{\"model\":\"vitoro\",\"type\":\"SUV\"},\"membership\":false,\"age\":28}"  ;
+		 
+                
+                 String bookingRequest="test1.json"  ;
+//		 String expectedOutput="expected1.json";
+		 Path path = Paths.get(bookingRequest);
+		 List<String> input =Files.readAllLines(path);
+                 
+                 JsonReader reader;
+		 reader = new JsonReader(new FileReader(bookingRequest));
+                 BookingRequest request = new Gson().fromJson(reader,BookingRequest.class);
+                 
 		carBooking= new SportCarBookingBuilder();
 		List<LocalDate> bookingDates=request.getRentDates().stream().map(parseDates).collect(Collectors.toList());
 		Booking booking = new Booking();
